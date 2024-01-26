@@ -17,7 +17,7 @@ class ConfigurationHelper implements Serializable {
   }
   
   private Map addDefaultsFromLibraryResources() {
-    Script.echo "Parameters: "
+    println "Parameters: "
   }
 
   private void printParameterValue(String parameterName) {
