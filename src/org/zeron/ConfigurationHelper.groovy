@@ -4,18 +4,27 @@ package org.zeron
 class ConfigurationHelper implements Serializable {
 
 
-  public void loadInitialResources(Script script) {
-    addConfig(script, configFromResource)
+  public void loadInitialResources() {
+    addConfig()
   }
   
-  private void addConfig(Script script) {
+  private void addConfig() {
     Map values = [:]
     // if (defaultsFromResources != null) {
     //   values = addDefaultsFromLibraryResources(script)
     // }
   }
   
-  private Map addDefaultsFromLibraryResources(Script script) {
+  private Map addDefaultsFromLibraryResources() {
     Script.echo "Parameters: "
+  }
+
+  private void printParameterValue(String parameterName) {
+    def build = Jenkins.instance.getItemByFullName('job_name').getBuildByNumber(build_number)
+    def params = build.getAction(ParametersAction.class).getParameters()
+    params.each { param ->
+      println "${param.name}: ${param.value}"
+    }
+     
   }
 }
