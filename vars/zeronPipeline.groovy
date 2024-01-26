@@ -9,4 +9,5 @@ void call(Map parameters = [:]) {
         if (currentBuild.result == 'ABORTED') {
             error("Pipeline aborted")
         }
+    }
 }
