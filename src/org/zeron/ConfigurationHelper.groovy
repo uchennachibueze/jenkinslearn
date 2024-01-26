@@ -5,7 +5,8 @@ class ConfigurationHelper implements Serializable {
 
 
   public void loadInitialResources() {
-    addConfig()
+    addDefaultsFromLibraryResources()
+    // addConfig()
   }
   
   private void addConfig() {
