@@ -10,10 +10,21 @@ pipeline {
         bat 'echo Hello World'
         echo "Build Number is ${currentBuild.rawBuild}"
         script {
-          def build = currentBuild.rawBuild
-          def parameters = build.getAction(ParametersAction.class)?.parameters
-          echo "Parameters is ${parameters}"
-          echo "Group Parameter Value is ${parameters.group}"
+           def parameterName = 'group'
+           
+           def build = currentBuild.rawBuild
+           def parametersAction = build.getAction(ParametersAction)
+           def parameterValue = null
+
+           if (parametersAction) {
+              def parameters = parametersAction.parameters
+              echo "Parameters is ${parameters}"
+              parameters.each { param ->
+                 if (param.name == parameterName) {
+                    parameterValue = param.value.toString()
+                    echo "Group Parameter Value is ${parameterValue}"
+                 }
+           }
         }
       }
     }
