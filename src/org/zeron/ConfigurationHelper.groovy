@@ -5,28 +5,29 @@ class ConfigurationHelper implements Serializable {
 
 
   public void loadInitialResources() {
-    addDefaultsFromLibraryResources()
+    // addDefaultsFromLibraryResources()
     // addConfig()
-  }
-  
-  private void addConfig() {
-    Map values = [:]
-    addDefaultsFromLibraryResources()
-    // if (defaultsFromResources != null) {
-    //   values = addDefaultsFromLibraryResources(script)
-    // }
-  }
-  
-  private Map addDefaultsFromLibraryResources() {
     println "Parameters: "
   }
+  
+  // private void addConfig() {
+  //   Map values = [:]
+  //   addDefaultsFromLibraryResources()
+  //   // if (defaultsFromResources != null) {
+  //   //   values = addDefaultsFromLibraryResources(script)
+  //   // }
+  // }
+  
+  // private Map addDefaultsFromLibraryResources() {
+  //   println "Parameters: "
+  // }
 
-  private void printParameterValue(String parameterName) {
-    def build = Jenkins.instance.getItemByFullName('job_name').getBuildByNumber(build_number)
-    def params = build.getAction(ParametersAction.class).getParameters()
-    params.each { param ->
-      println "${param.name}: ${param.value}"
-    }
+  // private void printParameterValue(String parameterName) {
+  //   def build = Jenkins.instance.getItemByFullName('job_name').getBuildByNumber(build_number)
+  //   def params = build.getAction(ParametersAction.class).getParameters()
+  //   params.each { param ->
+  //     println "${param.name}: ${param.value}"
+  //   }
      
-  }
+  // }
 }
