@@ -1,6 +1,5 @@
 package org.zeron
 
-
 @Singleton
 class ConfigurationHelper implements Serializable {
 
