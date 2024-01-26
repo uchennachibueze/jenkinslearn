@@ -18,7 +18,7 @@ pipeline {
 
            if (parametersAction) {
               def parameters = parametersAction.parameters
-              echo "Parameters is ${parameters}"
+              println "Parameters is ${parameters}"
               parameters.each { param ->
                  if (param.name == parameterName) {
                     parameterValue = param.value.toString()
