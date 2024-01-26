@@ -1,3 +1,4 @@
+import org.zeron.ConfigurationHelper
 import org.zeron.pipeline.framework.workflow.*
 import groovy.transform.Field
 import jenkins.model.Jenkins
