@@ -13,8 +13,16 @@ pipeline {
            def parameterName = 'group'
            
            def build = currentBuild.rawBuild
+           def parameters = build?.actions.find{ it instanceof ParametersAction }?.parameters
            def parametersAction = build.getAction(ParametersAction)
            def parameterValue = null
+
+           def hardcoded_param = "test"
+           def resolver = build.buildVariableResolver
+           def hardcoded_param_value = resolver.resolve(hardcoded_param)
+
+
+println "param ${hardcoded_param} value : ${hardcoded_param_value}"
 
            if (parametersAction) {
               def parameters = parametersAction.parameters
