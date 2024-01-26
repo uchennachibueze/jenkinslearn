@@ -24,9 +24,10 @@ pipeline {
                     parameterValue = param.value.toString()
                     echo "Group Parameter Value is ${parameterValue}"
                  }
-           }
+            }
+          }
         }
       }
-    }
+   }
   }
 }
