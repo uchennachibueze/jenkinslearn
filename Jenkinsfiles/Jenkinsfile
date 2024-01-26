@@ -1,3 +1,15 @@
-#!/usr/bin/env groovy
-@Library('test-shared-library') _
-zeronPipeline script:this
+// #!/usr/bin/env groovy
+// @Library('test-shared-library') _
+// zeronPipeline script:this
+
+pieline {
+  agent any
+  stages {
+    stage('Hello') {
+      steps {
+        sh 'echo Hello World'
+        echo "Build Number is ${currentBuild.rawBuild}"
+      }
+    }
+  }
+}
