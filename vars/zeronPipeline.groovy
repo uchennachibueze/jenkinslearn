@@ -6,6 +6,7 @@ void call(Map parameters = [:]) {
             zeronPipelineStageInit(parameters)
         }
 
-        // if (curren)
-    }
+        if (currentBuild.result == 'ABORTED') {
+            error("Pipeline aborted")
+        }
 }
