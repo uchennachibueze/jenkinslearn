@@ -10,6 +10,7 @@ class ConfigurationHelper implements Serializable {
   
   private void addConfig() {
     Map values = [:]
+    addDefaultsFromLibraryResources()
     // if (defaultsFromResources != null) {
     //   values = addDefaultsFromLibraryResources(script)
     // }
