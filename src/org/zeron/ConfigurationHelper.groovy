@@ -7,7 +7,7 @@ class ConfigurationHelper implements Serializable {
   public void loadInitialResources() {
     // addDefaultsFromLibraryResources()
     // addConfig()
-    println "Parameters: "
+    echo "Parameters: "
   }
   
   // private void addConfig() {
