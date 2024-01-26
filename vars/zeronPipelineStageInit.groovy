@@ -8,6 +8,6 @@ import org.jenkinsci.plugins.workflow.job.WorkflowJob
 
 void call(Map parameters = [:]) {
 
-  ConfigurationHelper.instance.loadInitialResources(script)
+  ConfigurationHelper.instance.loadInitialResources()
   
 }
