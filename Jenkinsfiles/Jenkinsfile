@@ -2,7 +2,7 @@
 // @Library('test-shared-library') _
 // zeronPipeline script:this
 
-pieline {
+pipeline {
   agent any
   stages {
     stage('Hello') {
