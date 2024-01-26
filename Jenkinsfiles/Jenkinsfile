@@ -1,5 +1,5 @@
-   // #!/usr/bin/env groovy
-// @Library('test-shared-library') _
+   #!/usr/bin/env groovy
+@Library('test-shared-library') _
 // zeronPipeline script:this
 
 pipeline {
