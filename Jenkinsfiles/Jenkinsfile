@@ -13,6 +13,7 @@ pipeline {
           def build = currentBuild.rawBuild
           def parameters = build.getAction(ParametersAction.class)?.parameters
           echo "Parameters is ${parameters}"
+          echo "Group Parameter Value is ${parameters.group}"
         }
       }
     }
