@@ -1,4 +1,5 @@
 package org.zeron
+import java.util.logging.Logger
 
 @Singleton
 class ConfigurationHelper implements Serializable {
@@ -7,7 +8,9 @@ class ConfigurationHelper implements Serializable {
   public void loadInitialResources() {
     // addDefaultsFromLibraryResources()
     // addConfig()
-    echo "Parameters: "
+    Logger logger = Logger.getLogger(getClass().getName())
+    logger.info("Parameters:")
+    // echo "Parameters: "
   }
   
   // private void addConfig() {
