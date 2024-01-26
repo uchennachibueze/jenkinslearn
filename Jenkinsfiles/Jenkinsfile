@@ -20,14 +20,14 @@ pipeline {
            def hardcoded_param = "group"
            def resolver = build.buildVariableResolver
            def hardcoded_param_value = resolver.resolve(hardcoded_param)
-
-
-println "param ${hardcoded_param} value : ${hardcoded_param_value}"
+           
+           
+           println "param ${hardcoded_param} value : ${hardcoded_param_value}"
 
            if (parametersAction) {
-              def parameters = parametersAction.parameters
-              println "Parameters is ${parameters}"
-              parameters.each { param ->
+              def parameters1 = parametersAction.parameters
+              println "Parameters is ${parameters1}"
+              parameters1.each { param ->
                  if (param.name == parameterName) {
                     parameterValue = param.value.toString()
                     echo "Group Parameter Value is ${parameterValue}"
