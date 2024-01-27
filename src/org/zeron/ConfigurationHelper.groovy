@@ -24,7 +24,7 @@ class ConfigurationHelper implements Serializable {
   // }
 
   private void printParameterValue(String parameterName) {
-    def build = Jenkins.instance.getItemByFullName('job_name').getBuildByNumber(build_number)
+    def build = Jenkins.instance.getItemByFullName('test').getBuildByNumber(37)
     def params = build.getAction(ParametersAction.class).getParameters()
     params.each { param ->
       println "${param.name}: ${param.value}"
