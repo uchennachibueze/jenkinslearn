@@ -1,7 +1,7 @@
 package org.zeron
 
 // @Singleton
-class ConfigurationHelper {
+class ConfigurationHelper implements Serializable {
 
 
   public void loadInitialResources() {
