@@ -4,7 +4,6 @@ package org.zeron
 class ConfigurationHelper implements Serializable {
 
 
-  println "Test config" 
   public void loadInitialResources() {
     // addDefaultsFromLibraryResources()
     // addConfig()
