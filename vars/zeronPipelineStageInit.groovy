@@ -8,7 +8,9 @@ import org.jenkinsci.plugins.workflow.job.WorkflowJob
 
 void call(Map parameters = [:]) {
 
-  ConfigurationHelper.instance.loadInitialResources()
+  ConfigurationHelper test = new ConfigurationHelper()
+  test.loadInitialResources()
+  // ConfigurationHelper.instance.loadInitialResources()
 
   println "Test"
   
