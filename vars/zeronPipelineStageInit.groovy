@@ -7,7 +7,10 @@ import org.jenkinsci.plugins.workflow.job.WorkflowJob
 @Field String STEP_NAME = getClass().getName()
 
 void call(Map parameters = [:]) {
+  ConfigurationHelper.instance.setWorkspaceId(parameters.script, parameters)
 
-  ConfigurationHelper.instance.loadInitialResources()
+  script = parameters.script
+
+  ConfigurationHelper.instance.loadInitialResources(script)
   
 }
