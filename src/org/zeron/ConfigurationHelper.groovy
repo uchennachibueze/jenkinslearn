@@ -74,6 +74,6 @@ class ConfigurationHelper implements Serializable {
     params.each { param ->
       script.echo "${param.name}: ${param.value}"
     }
-     
+    return param.value
   }
 }
