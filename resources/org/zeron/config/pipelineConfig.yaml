@@ -1,0 +1,22 @@
+SEIDebug:
+  logLevel: DEBUG # [OPTIONS] ERROR, WARN, INFO, DEBUG, TRACE
+  workspaceCleanup: true # Set to false to troubleshoot workspace issues
+
+DeployJob:
+  version: "3.0.0"
+
+fixedPresets:
+  - name: castScan
+    preset: Build, CAST Scan
+  - name: castIqScanOnly
+    preset: NexusIQ Scan, CAST Scan
+  - name: deploy
+    preset: Deploy
+    
+buildOutputPath: deploy
+
+
+pythonV: python3
+
+NODES_SETTINGS:
+  DONOTUSE: '!Ansible&&!SQLServer&&!only-matching'
