@@ -53,7 +53,7 @@ class ConfigurationHelper implements Serializable {
     // addDefaultsFromLibraryResources()
     // addConfig()
     // echo "Parameters: "
-   script.echo "Parameters: ${printParameterValue(script, 'group')}"
+     printParameterValue(script, 'group')
   }
   
   // private void addConfig() {
@@ -82,4 +82,7 @@ class ConfigurationHelper implements Serializable {
     // transformYamlFile
     
   }
+
+  private def test(Script script){
+    script.echo "Test group: ${group}"
 }
