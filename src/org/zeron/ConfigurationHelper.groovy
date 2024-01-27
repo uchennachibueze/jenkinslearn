@@ -52,7 +52,7 @@ class ConfigurationHelper implements Serializable {
     // addDefaultsFromLibraryResources()
     // addConfig()
     // echo "Parameters: "
-    printParameterValue(script, 'group')
+   script.echo "Parameters: ${printParameterValue(script, 'group')}"
   }
   
   // private void addConfig() {
