@@ -74,7 +74,7 @@ class ConfigurationHelper implements Serializable {
     def build = script.currentBuild.rawBuild
     def params = build.getAction(ParametersAction.class).getParameters()
 
-    def targetParameterName = "another"
+    def targetParameterName = "group"
 
     def targetParameterValue = params.find { it.name == targetParameterName }?.value
 
