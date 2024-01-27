@@ -54,6 +54,7 @@ class ConfigurationHelper implements Serializable {
     // addConfig()
     // echo "Parameters: "
      printParameterValue(script, 'group')
+    test(script)
   }
   
   // private void addConfig() {
