@@ -8,6 +8,7 @@ class ConfigurationHelper implements Serializable {
   // Ensures only approved keys are loaded from the config.yaml
   private List configApprovedKeys = ["applicationDetails", "configFileVersion", "fileType", "deliver", "notificationSettings", "testingFramework", "SONARQUBE_SETTINGS", "CAST_SETTINGS", "customScripts", "deploy", "SEIDebug", "OPENSHIFT"]
 
+  private String group
   private Map cachedValues = [:]
   private HashSet nodesUtilized = []
   private HashSet workspacesUtilized = []
@@ -71,9 +72,14 @@ class ConfigurationHelper implements Serializable {
     // def build = Jenkins.instance.getItemByFullName('test').getBuildByNumber(42)
     def build = script.currentBuild.rawBuild
     def params = build.getAction(ParametersAction.class).getParameters()
+    
     params.each { param ->
       script.echo "${param.name}: ${param.value}"
+      group = param.value
+      script.echo "Parameter value ${group}"
     }
-    return ${param.value}
+
+    // transformYamlFile
+    
   }
 }
