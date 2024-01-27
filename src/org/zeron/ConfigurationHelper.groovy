@@ -1,9 +1,10 @@
 package org.zeron
 
-// @Singleton
+@Singleton
 class ConfigurationHelper implements Serializable {
 
 
+  println "Test config" 
   public void loadInitialResources() {
     // addDefaultsFromLibraryResources()
     // addConfig()
