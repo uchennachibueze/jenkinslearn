@@ -86,4 +86,5 @@ class ConfigurationHelper implements Serializable {
 
   private def test(Script script){
     script.echo "Test group: ${group}"
+  }
 }
