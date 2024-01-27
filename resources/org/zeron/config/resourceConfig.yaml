@@ -1,0 +1,436 @@
+##############################################
+##               SQA                        ##
+##############################################
+NEXUSIQ_SETTINGS:
+  URL: https://iqserver
+  CredentialsID: MANAGED_JenkinsServiceAccount
+  CLI_PATH: '/apps/utils/nexus-iq-server/nexus-iq-cli.jar'
+  SCAN_EXEMPTION:
+    - 'c1-er-hana-niv-data-schema'
+    - 'mfa-ccd-build'
+    - 'c1-er-hana-b-overseas-data-schema'
+    # - 'secdevops-dashboard'
+    - 'gauge_dotnet'
+    # - 'zeron-pipeline-demo'
+    - 'c1-avro-data-schema'
+    - 'c1-case-management-data-schema'
+    - 'c1-casp-data-schema'
+    - 'c1-comm-services-data-schema'
+    - 'c1-ctf-data-schema'
+    - 'c1-dchk-ms-data-schema'
+    - 'c1-ecrba-data-schema'
+    - 'c1-ehf-soa-data-schema'
+    - 'c1-er-cd00-bi-analysis-data-schema'
+    - 'c1-er-cd00-bi-dimension-data-schema'
+    - 'c1-er-cd00-bi-ds-etl-data-schema'
+    - 'c1-er-cd00-bi-support-data-schema'
+    - 'c1-er-dm00-bi-ds-etl-data-schema'
+    - 'c1-er-ocs-bi-ds-etl-data-schema'
+    - 'c1-er-pp00-bi-ds-etl-data-schema'
+    - 'c1-er-ri99-bi-ds-etl-data-schema'
+    - 'c1-opr-detail-1-0-data-schema'
+    - 'c1-opr-soa-data-schema'
+    - 'c1-pymnt-ms-data-schema'
+    - 'c1-shared-data-schema'
+    - 'c1-salesforce'
+    - 'c1-rabbitmq'
+    - 'c1-redis-cluster'
+    - 'c1-er-apps-bi-ds-etl-data-schema'
+    - 'c1-pa-ads-data-schema'
+    - 'er-bi-clear-portal'
+    - 'c1-etl-ceas-data'
+    - 'c1-er-hana-stg-ca-data-schema'
+    - 'c1-eps-data-schema'
+    - 'c1-mule-environment-config'
+    - 'er-bi-clear-data-services'
+
+
+SONARQUBE_SETTINGS:
+  URL: https://sonarqube/
+  CredentialsId: MANAGED_SQServiceAccount
+  Token: MANAGED_SonarQubeToken
+  Default_Exclusions: '**/*.gif,**/*.doc,**/*.docx,**/*.ipch,**/*.png,**/*.jpeg'
+  HOST_LOCATION: \\ndcwozwcsmb01\utilities\SonarScanner
+  SonarQubeSWDir: \SonarScanner\4.3\windows
+  SonarQubeMSBuildDir: \MSBuild\4.9\net46
+  SonarQubeSubDir: sonar-scanner-4.3.0.2102
+  SCAN_EXEMPTION:
+    - 'mfa-ccd-build'
+    - 'c1-opr-detail-1-0-data-schema'
+    # - 'secdevops-dashboard'
+    - 'c1-er-hana-b-overseas-data-schema'
+    # - 'zeron-pipeline-demo'
+    - 'CEAC_AGNATO'
+    - 'c1-avro-data-schema'
+    - 'c1-case-management-data-schema'
+    - 'c1-casp-data-schema'
+    - 'c1-comm-services-data-schema'
+    - 'c1-ctf-data-schema'
+    - 'c1-dchk-ms-data-schema'
+    - 'c1-ecrba-data-schema'
+    - 'c1-ehf-soa-data-schema'
+    - 'c1-er-cd00-bi-analysis-data-schema'
+    - 'c1-er-cd00-bi-dimension-data-schema'
+    - 'c1-er-cd00-bi-ds-etl-data-schema'
+    - 'c1-er-cd00-bi-support-data-schema'
+    - 'c1-er-dm00-bi-ds-etl-data-schema'
+    - 'c1-er-ocs-bi-ds-etl-data-schema'
+    - 'c1-er-pp00-bi-ds-etl-data-schema'
+    - 'c1-er-ri99-bi-ds-etl-data-schema'
+    - 'c1-opr-soa-data-schema'
+    - 'c1-pymnt-ms-data-schema'
+    - 'c1-shared-data-schema'
+    - 'c1-rabbitmq'
+    - 'c1-redis-cluster'
+    - 'c1-er-apps-bi-ds-etl-data-schema'
+    - 'c1-pa-ads-data-schema'
+    - 'er-bi-clear-portal'
+    - 'c1-etl-ceas-data'
+    - 'c1-er-hana-stg-ca-data-schema'
+    - 'c1-eps-data-schema'
+    - 'c1-mule-environment-config'
+    - 'er-bi-clear-data-services'
+
+    
+CAST_SETTINGS:
+  CAST_WEB: https://devcast
+  CAST_AIP_URL: https://devcast/api
+  CredentialsId: '$CASTSvc'
+  CredentialsKeyId: MANAGED_CAST_AIP_Token
+  AIP_KEY: MANAGED_CAST_AIP_Token
+  DASH_NAME: ""
+  Default_Exclusions: 
+    - "**/*.gif"
+    - "target/"
+    - ".git/"
+    - "Source/target/"
+    - "temp/"
+    - "tests/"
+    - "*test"
+    - ".svn/"
+    - "tmp/"
+    - "*.zip"
+  REPORT_DLL: C:\\CAST-Report-Generator\\CastReporting.Console.Core.dll
+  REPORTS_OUTPUT_DIR: 'CAST-Reports'
+  SECURITY_ONLY_ENFORCEMENT:
+    - 'CCD_WEBSITE_FRAMEWORK'
+    - 'CCD-NIV-Reports'
+  SCAN_EXEMPTION:
+    - 'IAFDB_IAC'
+    - 'IVO'
+    - 'c1-er-hana-niv-data-schema'
+    - 'niv'
+    - 'TGS_Web'
+    #- 'TDISWorkflowService'
+    #- 'TDIS_Client'
+    - 'mfa-ccd-build'
+    - 'c1-opr-detail-1-0-data-schema'
+    # - 'secdevops-dashboard'
+    - 'csm-eps-c1-eps-sb-metadata'
+    - 'c1-er-hana-b-overseas-data-schema'
+    - 'sii_is-dedm_esb-ehfservice'
+    - 'csd-rc'
+    - 'c1-avro-data-schema'
+    - 'c1-case-management-data-schema'
+    - 'c1-casp-data-schema'
+    - 'c1-comm-services-data-schema'
+    - 'c1-ctf-data-schema'
+    - 'c1-dchk-ms-data-schema'
+    - 'c1-ecrba-data-schema'
+    - 'c1-ehf-soa-data-schema'
+    - 'c1-er-cd00-bi-analysis-data-schema'
+    - 'c1-er-cd00-bi-dimension-data-schema'
+    - 'c1-er-cd00-bi-ds-etl-data-schema'
+    - 'c1-er-cd00-bi-support-data-schema'
+    - 'c1-er-dm00-bi-ds-etl-data-schema'
+    - 'c1-er-ocs-bi-ds-etl-data-schema'
+    - 'c1-er-pp00-bi-ds-etl-data-schema'
+    - 'c1-er-ri99-bi-ds-etl-data-schema'
+    - 'c1-opr-soa-data-schema'
+    - 'c1-pymnt-ms-data-schema'
+    - 'c1-shared-data-schema'
+    - 'c1-salesforce'
+    - 'c1-rabbitmq'
+    - 'c1-redis-cluster'
+    - 'c1-er-apps-bi-ds-etl-data-schema'
+    - 'c1-pa-ads-data-schema'
+    - 'er-bi-clear-portal'
+    - 'c1-etl-ceas-data'
+    - 'c1-er-hana-stg-ca-data-schema'
+    - 'c1-eps-data-schema'
+    - 'c1-mule-environment-config'
+    - 'c1opr-soa-metadata'
+    - 'caopr-ipdb-data-sbservice'
+    - 'caopr-ipdb-data-service'
+    - 'caopr-passportrecord-data-sbservice'
+    - 'caopr-passportrecord-data-service'
+    - 'caopr-sb-metadata'
+    - 'er-bi-clear-data-services'
+    - 'btb_listener_proxy'
+    - 'btb_provider_proxy'
+    - 'cgs_clasp_add'
+    - 'cgs_log_rest_service_proxy'
+    - 'start_gateway-visa_query_add_service_proxy'
+    - 'ssalive-osb-ppt_cssnv10nprovider'
+    - 'ssalive-osb-ssaverificationandgateway'
+    - 'acrq_searchservice_esb'
+    - 'acrq_searchservice_soa'
+# EPS SOA 
+    - 'c1-eps-asynch-collection-sbservice' # repo named c1-eps-asynch-payment-sbservice
+    - 'c1-eps-business-rules-service'
+    - 'c1-eps-collection-activity-service'
+    - 'c1-eps-ehf-detail-service'
+    - 'c1-eps-ehf-summary-service'
+    - 'c1-eps-enterprise-collection-service'
+    - 'c1-eps-esb-configuration'
+    - 'c1-eps-generate-tracking-service'
+    - 'c1-eps-online-collections-sbservice'
+    - 'c1-eps-online-collections-service'
+    - 'c1-eps-parse-record-service'
+    - 'c1-eps-payment-result-sbservice'
+    - 'c1-eps-payment-result-service'
+    - 'c1-eps-payment-service'
+    - 'c1-eps-payment-status-polling-service'
+    - 'c1-eps-payment-withdraw-sbservice'
+    - 'c1-eps-payment-withdraw-service'
+    - 'c1-eps-pgreport-servlet-client-service'
+    - 'c1-eps-sb-metadata'
+    - 'c1-eps-service-key-provider-util'
+    - 'c1-eps-settlement-status-sbservice'
+    - 'c1-eps-settlement-status-service'
+    - 'c1-eps-soa-metadata'
+    - 'c1-eps-synch-collections-sbservice'
+    - 'c1-eps-synch-collections-service'
+    - 'c1-eps-tcs-activity-download-sbservice'
+    - 'c1-eps-tcs-online-sbservice'
+    - 'c1-eps-tcs-single-query-sbservice'
+    - 'c1-eps-tcs-single-sbservice'
+    - 'c1-eps-transmit-collection-activity-sbservice'
+    - 'c1-eps-plastic-card-collections-sbservice'
+    - 'c1-eps-transaction-status-synch-service'
+    - 'c1-eps-tcs-plastic-card-sbservice'
+
+  THRESHOLD_EXCEPTIONS:
+    - na
+    # -  Welcome_World_111
+  REPORTS:
+    # - C-CPP Standards Compliance Report.docx
+    # - C-CPP Standards Detailed Report.docx
+    # - C-CPP Standards Full Detailed Report.xlsx
+    # - CISQ Compliance Report.docx
+    # - CISQ Detailed Report.docx
+    # - CISQ Full Detailed Report.xlsx
+    # - CISQ Security Compliance Report.docx
+    # - CISQ Security Detailed Report.docx
+    # - CISQ Security Full Detailed Report.xlsx
+    # - CWE (2011) Top 25 Compliance Report.docx
+    # - CWE (2011) Top 25 Detailed Report.docx
+    # - CWE (2011) Top 25 Full Detailed Report.xlsx
+    # - CWE (2019) Top 25 Compliance Report.docx
+    # - CWE (2019) Top 25 Detailed Report.docx
+    # - CWE (2019) Top 25 Full Detailed Report.xlsx
+    # - CWE Compliance Report.docx
+    # - CWE Detailed Report.docx
+    # - CWE Full Detailed Report.xlsx
+    # - NIST-SP800-53R4 Compliance Report.docx
+    # - NIST-SP800-53R4 Detailed Report.docx
+    - NIST-SP800-53R4 Full Detailed Report.xlsx
+    # - OMG-ASCQM Compliance Report.docx
+    # - OMG-ASCQM Detailed Report.docx
+    # - OMG-ASCQM Full Detailed Report.xlsx
+    # - OMG-ASCQM Security Compliance Report.docx
+    # - OMG-ASCQM Security Detailed Report.docx
+    # - OMG-ASCQM Security Full Detailed Report.xlsx
+    # - OWASP-2013 Compliance Report.docx
+    # - OWASP-2013 Detailed Report.docx
+    # - OWASP-2013 Full Detailed Report.xlsx
+    # - OWASP-2017 Compliance Report.docx
+    # - OWASP-2017 Detailed Report.docx
+    # - OWASP-2017 Full Detailed Report.xlsx
+    # - OWASP-API-2019 Compliance Report.docx
+    # - OWASP-API-2019 Detailed Report.docx
+    # - OWASP-API-2019 Full Detailed Report.xlsx
+    # - OWASP-Mobile-2016 Compliance Report.docx
+    # - OWASP-Mobile-2016 Detailed Report.docx
+    # - OWASP-Mobile-2016 Full Detailed Report.xlsx
+    # - PCI-DSS-V3.1 ComplianceReport.docx
+    # - PCI-DSS-V3.1 Detailed Report.docx
+    # - PCI-DSS-V3.1 Full Detailed Report.xlsx
+    # - PCI-DSS-V3.2.1 Compliance Report.docx
+    # - PCI-DSS-V3.2.1 Detailed Report.docx
+    # - PCI-DSS-V3.2.1 Full Detailed Report.xlsx
+    # - STIG V4R8 Compliance Report.docx
+    # - STIG V4R8 Detailed Report.docx
+    # - STIG V4R8 Full Detailed Report.xlsx
+  ADMIN:
+    NOTIFICATION:
+      ONBOARDING: CI-Ops-Support@state.gov
+
+
+  SCAN_RETENTION_DAYS:
+    DEV: 1800
+    PROD: 1800
+
+##############################################
+##               TOOLS                      ##
+##############################################
+Jenkins:
+  credentialId: MANAGED_JenkinsServiceAccount
+
+GITLAB:
+  credentialID: MANAGED_JenkinsServiceAccount
+  GitlabProjectGroupRegexPatternBase: '([a-z0-9\-\_]+\/)+([a-z0-9\-\_]*)'
+  HOST: 'git'
+  ServiceUser: 'JenkinsSvc'
+  ServiceEmail: 'JenkinsSvc@JenkinsSvc'
+  apiToken: MANAGED_GitlabToken
+  CloneOption:
+    noFetchTags: true
+
+metadata:
+  profile:
+    PROD:
+      URL: https://cicdreporting/metadata_datastore_service
+      Token: MANAGED_MetadataSVC
+    DEV:
+      URL: https://192.168.19.68/metadata_datastore_service
+      Token: MANAGED_MetadataSVC_DEV
+  collections:
+    artifacts: artifacts
+    metrics:  metrics
+    ivv_deliveries: ivv_deliveries
+
+NUGET:
+  BUILD_LOCATION: D:\\nuget
+  HOST_LOCATION: \\NDCWOZWCSMB01\Utilities\NuGet
+  SOURCE: https://nexus/repository/nuget-group/index.json
+
+NEXUS:
+  URL: https://nexus
+  CredentialsID: MANAGED_Nexus_credentials
+  Token: MANAGED_NexusToken
+  REPOURI: service/rest/v1/components?repository=
+  TAGSURI: service/rest/v1/tags
+  SEARCHURI: service/rest/v1/search
+  SC_REPO: SC_Repo
+  eio:
+    maven2: IVV_Repo
+    npm:
+    docker:
+  ivv:
+    maven2: IVV_Repo
+    npm:
+    docker:
+  prod:
+    maven2: Prod_Repo
+    npm:
+    docker:
+
+
+NODEJS:
+  NODE_EXTRA_CA_CERTS: /home/jenkins/ca_chain.pem
+  SETTINGS_FILE: 'npm-settings'
+  TOKEN: MANAGED_SEI_NPM_Token
+  VERSION: 'v14'
+
+ANSIBLE_SETTINGS:
+  CredentialsId: MANAGED_AnsibleVault
+  inventoryDir: 'inventories'
+  playbookDir: 'playbooks'
+  secretsDir: 'secrets'
+  ivvEnvironment: 'ivv'
+  productionEnvironment: 'production'
+
+TANZU:
+  ZONE:
+    NPE_DEVELOPER_ZONE:
+      Foundation_FQDN: https://api.sys.prod.tas.ms.ca.npe
+
+OPENSHIFT:
+  ZONE:
+    NPE_DEVELOPER_ZONE:
+      Master_Instance: "api.aiocp.ca.npe:6443"
+      Cluster_FQDN: "apps.aiocp.ca.npe"
+    NPE_DEVELOPER_PROD_ZONE:
+      Master_Instance: "api.aiocp.ca.npe:6443"
+      Cluster_FQDN: "apps.aiocp.ca.npe"
+    NPE_MIGRATION_ZONE:
+      Master_Instance: "api.devtest-openshift4.ca.state.sbu:6443"
+      Cluster_FQDN: "apps.devtest-openshift4.ca.state.sbu"
+      hostMapping:
+    MZ_MOCK_OPENNET_ZONE:
+      Master_Instance: "api.devtest-openshift4.ca.state.sbu:6443"
+      Cluster_FQDN: "apps.devtest-openshift4.ca.state.sbu"
+      hostMapping:
+    NPE_CONTAINER_ZONE:
+      Master_Instance: "api.npeocpc1sec.ca.npe:6443"
+      Cluster_FQDN: "apps.npeocpc1sec.ca.npe"
+      hostMapping:
+    NPE_OPENNET_ZONE:
+      Master_Instance: "api.npeoa-openshift4.ca.npe:6443"
+      Cluster_FQDN: "apps.npeoa-openshift4.ca.npe"
+      hostMapping:
+    NPE_MOCK_OPENNET_ZONE:
+      Master_Instance: "api.npeocpc1sec.ca.npe:6443"
+      Cluster_FQDN: "apps.npeocpc1sec.ca.npe"
+      hostMapping:
+    C1EW_CONTAINER_ZONE:
+      Master_Instance: "api.ewc1sec.idm.secure.ca.state.sbu:6443"
+      Cluster_FQDN: "apps.ewc1sec.idm.secure.ca.state.sbu"
+      hostMapping:
+    OPENNET_ZONE:
+      Master_Instance: "api.ewoa-openshift4.ca.state.sbu:6443"
+      Cluster_FQDN: "apps.ewoa-openshift4.ca.state.sbu"
+      hostMapping:
+    C1MDC2_CONTAINER_ZONE:
+      Master_Instance: "api.mdc1sec.idm.ga.state.gov:6443"
+      Cluster_FQDN: "apps.mdc1sec.idm.ga.state.gov"
+      hostMapping:
+  Deploy_Timeout: 15
+  Max_Wait: 25
+
+# Apache proxy servers
+PROXY_SETTINGS:
+  ZONE:
+    NPE_MIGRATION_ZONE:
+      http_proxy: "http://192.168.69.14"
+      https_proxy: "http://192.168.69.14"
+      no_proxy: ".state.sbu,.npe"
+    MZ_MOCK_OPENNET_ZONE:
+      http_proxy: "http://192.168.69.14"
+      https_proxy: "http://192.168.69.14"
+      no_proxy: ".state.sbu,.npe"
+    NPE_CONTAINER_ZONE:
+      http_proxy: "http://192.168.7.43:443"
+      https_proxy: "http://192.168.7.43:443"
+      no_proxy: ".state.sbu,.npe"
+    NPE_MOCK_OPENNET_ZONE:
+      http_proxy: "http://192.168.7.43:443"
+      https_proxy: "http://192.168.7.43:443"
+      no_proxy: ".state.sbu,.npe"
+    C1EW_CONTAINER_ZONE:
+      http_proxy: "http://192.168.135.21:443"
+      https_proxy: "http://192.168.135.21:443"
+      no_proxy: ".state.sbu,.npe"
+    C1MDC2_CONTAINER_ZONE:
+      http_proxy: "http://192.168.230.120:443"
+      https_proxy: "http://192.168.230.120:443"
+      no_proxy: ".state.sbu,.npe"
+
+
+SALESFORCE:
+  # Default Salesforce deployable source code repo path location
+  Source_Path: 'force-app/main/default'
+  # Default wait time in minutes for a sfdx cli command to execute
+  Client_Wait_Time: 60
+  # Default test execution level on Salesforce platform for sfdx deploys
+  Test_Level: 'RunLocalTests'
+  Log_Level: 'warn'
+  # path to salesforce forceignore
+  ForceIgnore_File: ".forceignore"
+
+SCHEDULER:
+  deploy:
+    jenkinsJobPath:
+  castScan:
+    jenkinsJobPath:
