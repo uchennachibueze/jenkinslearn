@@ -89,11 +89,11 @@ class ConfigurationHelper implements Serializable {
       // script.echo "${param.name}: ${param.value}"
       // group = param.value
       // script.echo "Parameter value ${group}"
-    }
+  }
 
     // transformYamlFile
     
-  }
+  // }
 
   private def test(Script script){
     script.echo "Test group: ${group}"
