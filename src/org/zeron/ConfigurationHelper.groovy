@@ -1,5 +1,7 @@
 package org.zeron
 
+import hudson.model.*
+  
 @Singleton
 class ConfigurationHelper implements Serializable {
 
