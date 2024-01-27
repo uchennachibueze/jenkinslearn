@@ -1,5 +1,4 @@
 package org.zeron
-import java.util.logging.Logger
 
 @Singleton
 class ConfigurationHelper implements Serializable {
@@ -8,9 +7,8 @@ class ConfigurationHelper implements Serializable {
   public void loadInitialResources() {
     // addDefaultsFromLibraryResources()
     // addConfig()
-    Logger logger = Logger.getLogger(getClass().getName())
-    logger.info("Parameters:")
     // echo "Parameters: "
+    printParameterValue('group')
   }
   
   // private void addConfig() {
@@ -25,12 +23,12 @@ class ConfigurationHelper implements Serializable {
   //   println "Parameters: "
   // }
 
-  // private void printParameterValue(String parameterName) {
-  //   def build = Jenkins.instance.getItemByFullName('job_name').getBuildByNumber(build_number)
-  //   def params = build.getAction(ParametersAction.class).getParameters()
-  //   params.each { param ->
-  //     println "${param.name}: ${param.value}"
-  //   }
+  private void printParameterValue(String parameterName) {
+    def build = Jenkins.instance.getItemByFullName('job_name').getBuildByNumber(build_number)
+    def params = build.getAction(ParametersAction.class).getParameters()
+    params.each { param ->
+      println "${param.name}: ${param.value}"
+    }
      
-  // }
+  }
 }
