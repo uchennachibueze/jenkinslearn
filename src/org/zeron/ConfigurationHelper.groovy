@@ -73,11 +73,22 @@ class ConfigurationHelper implements Serializable {
     // def build = Jenkins.instance.getItemByFullName('test').getBuildByNumber(42)
     def build = script.currentBuild.rawBuild
     def params = build.getAction(ParametersAction.class).getParameters(parameterName)
-    
-    params.each { param ->
-      script.echo "${param.name}: ${param.value}"
-      group = param.value
+
+    def targetParameterName = "group"
+
+    def targetParameterValue = params.find { it.name == targetParameterName }?.value
+
+    if (targetParameterValue != null) {
+      script.echo "Value of ${targetParameterName}: ${targetParameterValue}"
+      group = targetParameterValue
       script.echo "Parameter value ${group}"
+    } else {
+      script.echo "Parameter '${targetParameterName}' not found."
+    }
+    // params.each { param ->
+      // script.echo "${param.name}: ${param.value}"
+      // group = param.value
+      // script.echo "Parameter value ${group}"
     }
 
     // transformYamlFile
